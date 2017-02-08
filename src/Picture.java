@@ -117,6 +117,19 @@ public class Picture extends SimplePicture {
 			}
 		}
 	}
+	
+	/** Method to turn the image into shades of grey */
+	public void grayscale() {
+		Pixel[][] pixels = this.getPixels2D();
+		for (Pixel[] rowArray : pixels) {
+			for (Pixel pixelObj : rowArray) {
+				int averageColor = (pixelObj.getBlue() + pixelObj.getRed() + pixelObj.getGreen()) / 3;
+				pixelObj.setBlue(averageColor);
+				pixelObj.setRed(averageColor);
+				pixelObj.setGreen(averageColor);
+			}
+		}
+	}
 
 	/**
 	 * Method that mirrors the picture around a vertical mirror in the center of
