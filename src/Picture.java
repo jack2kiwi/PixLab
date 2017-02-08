@@ -94,6 +94,17 @@ public class Picture extends SimplePicture {
 			}
 		}
 	}
+	
+	/** Method to keep only the color blue */
+	public void keepOnlyBlue() {
+		Pixel[][] pixels = this.getPixels2D();
+		for (Pixel[] rowArray : pixels) {
+			for (Pixel pixelObj : rowArray) {
+				pixelObj.setRed(0);
+				pixelObj.setGreen(0);
+			}
+		}
+	}
 
 	/**
 	 * Method that mirrors the picture around a vertical mirror in the center of
