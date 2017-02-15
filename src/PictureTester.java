@@ -125,6 +125,15 @@ public class PictureTester
     seagull.explore();
   }
   
+  /** Method to test the restrictedCopy method */
+  public static void testRestrictedCopy()
+  {
+	  Picture blank = new Picture("640x480.jpg");
+	  blank.explore();
+	  blank.restrictedCopy(new Picture ("snowman.jpg"), 0, 0, 75, 165, 100, 80);
+	  blank.explore();
+  }
+  
   /** Method to test the collage method */
   public static void testCollage()
   {
@@ -162,8 +171,9 @@ public class PictureTester
 //	  testMirrorDiagonal();
 //    testMirrorTemple();
 //    testMirrorArms();
-    testMirrorGull();
+//    testMirrorGull();
     //testMirrorDiagonal();
+	  testRestrictedCopy();
     //testCollage();
     //testCopy();
     //testEdgeDetection();
