@@ -378,6 +378,30 @@ public class Picture extends SimplePicture {
 		this.mirrorVertical();
 		this.write("collage.jpg");
 	}
+	
+	/** Method to create a collage of several pictures */
+	public void myCollage() {
+		Picture snowman = new Picture("snowman.jpg");
+		Picture bird = new Picture("seagull.jpg");
+		this.copy(bird, 0, 0);
+		this.restrictedCopy(snowman, 0, 0, 75, 165, 100, 80);
+		this.restrictedCopy(snowman, 100, 80, 75, 165, 100, 80);
+		this.restrictedCopy(snowman, 200, 160, 75, 165, 100, 80);
+		this.mirrorVertical();
+		this.mirrorHorizontal();
+		this.negate();
+		this.restrictedCopy(bird, 25, 270, 236, 238,85, 100);
+		this.mirrorHorizontal();
+		this.mirrorDiagonal();
+		this.mirrorHorizontalBotToTop();
+		this.mirrorVerticalRightToLeft();
+		this.write("collage.jpg");
+		Picture person = new Picture("barbaraS.jpg");
+		this.copy(person, 200, 150);
+		this.mirrorHorizontalBotToTop();
+		this.mirrorVertical();
+		this.negate();
+	}
 
 	/**
 	 * Method to show large changes in color
