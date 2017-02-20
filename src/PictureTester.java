@@ -162,17 +162,17 @@ public class PictureTester
     * method in Java */
   public static void main(String[] args)
   {
-    // uncomment a call here to run a test
-    // and comment out the ones you don't want
-    // to run
+//     uncomment a call here to run a test
+//     and comment out the ones you don't want
+//     to run
 //    testZeroBlue();
 //    testKeepOnlyBlue();
-    //testKeepOnlyRed();
-    //testKeepOnlyGreen();
+//    testKeepOnlyRed();
+//    testKeepOnlyGreen();
 //    testNegate();
 //    testGrayscale();
 //    testFixUnderwater();
-    //testMirrorVertical();
+//    testMirrorVertical();
 //	  testMirrorVerticalRightToLeft();
 //	  testMirrorHorizontal();
 //	  testMirrorHorizontalBotToTop();
@@ -180,18 +180,18 @@ public class PictureTester
 //    testMirrorTemple();
 //    testMirrorArms();
 //    testMirrorGull();
-    //testMirrorDiagonal();
+//    testMirrorDiagonal();
 //	  testRestrictedCopy();
-    //testCollage();
-	  testMyCollage();
-    //testCopy();
-    //testEdgeDetection();
-    //testEdgeDetection2();
-    //testChromakey();
-    //testEncodeAndDecode();
-    //testGetCountRedOverValue(250);
-    //testSetRedToHalfValueInTopHalf();
-    //testClearBlueOverValue(200);
-    //testGetAverageForColumn(0);
+//    testCollage();
+//	  testMyCollage();
+//    testCopy();
+      testEdgeDetection();
+//    testEdgeDetection2();
+//    testChromakey();
+//    testEncodeAndDecode();
+//    testGetCountRedOverValue(250);
+//    testSetRedToHalfValueInTopHalf();
+//    testClearBlueOverValue(200);
+//    testGetAverageForColumn(0);
   }
 }
