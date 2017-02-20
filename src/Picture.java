@@ -439,6 +439,39 @@ public class Picture extends SimplePicture {
 			}
 		}
 	}
+	
+	/**
+	 * Method to show large changes in color
+	 * 
+	 * @param colorDiff
+	 *            difference in color to specify lines
+	 */
+	public void edgeDetection2(int colorDiff) {
+		Pixel leftPixel = null;
+		Pixel rightPixel = null;
+		Pixel[][] pixels = this.getPixels2D();
+		for (int row = 0; row < pixels.length; row++) {
+			for (int col = 0; col < pixels[0].length - 1; col++) {
+				leftPixel = pixels[row][col];
+				rightPixel = pixels[row][col + 1];
+				if ((Math.abs(leftPixel.getBlue() - rightPixel.getBlue())) + (Math.abs(leftPixel.getRed() - rightPixel.getRed())) + (Math.abs(leftPixel.getGreen() - rightPixel.getGreen())) > colorDiff)
+					leftPixel.setColor(Color.BLACK);
+				else
+					leftPixel.setColor(Color.WHITE);
+			}
+		}
+		
+		Pixel topPixel = null;
+		Pixel bottomPixel = null;
+		for (int row = 0; row < pixels.length - 1; row++) {
+			for (int col = 0; col < pixels[0].length; col++) {
+				topPixel = pixels[row][col];
+				bottomPixel = pixels[row + 1][col];
+				if ((Math.abs(topPixel.getBlue() - bottomPixel.getBlue())) + (Math.abs(topPixel.getRed() - bottomPixel.getRed())) + (Math.abs(topPixel.getGreen() - bottomPixel.getGreen())) > colorDiff)
+					topPixel.setColor(Color.BLACK);
+			}
+		}
+	}
 
 	/*
 	 * Main method for testing - each class in Java can have a main method
