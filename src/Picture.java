@@ -446,7 +446,7 @@ public class Picture extends SimplePicture {
 	 * @param colorDiff
 	 *            difference in color to specify lines
 	 */
-	public void edgeDetection2(int colorDiff) {
+	public void edgeDetection2(int colorDiff, String color) {
 		Pixel leftPixel = null;
 		Pixel rightPixel = null;
 		Pixel[][] pixels = this.getPixels2D();
@@ -454,7 +454,7 @@ public class Picture extends SimplePicture {
 			for (int col = 0; col < pixels[0].length - 1; col++) {
 				leftPixel = pixels[row][col];
 				rightPixel = pixels[row][col + 1];
-				if ((Math.abs(leftPixel.getBlue() - rightPixel.getBlue())) + (Math.abs(leftPixel.getRed() - rightPixel.getRed())) + (Math.abs(leftPixel.getGreen() - rightPixel.getGreen())) > colorDiff)
+				if ((Math.abs(leftPixel.getColor(color) - rightPixel.getColor(color))) > colorDiff)
 					leftPixel.setColor(Color.BLACK);
 				else
 					leftPixel.setColor(Color.WHITE);
@@ -467,7 +467,7 @@ public class Picture extends SimplePicture {
 			for (int col = 0; col < pixels[0].length; col++) {
 				topPixel = pixels[row][col];
 				bottomPixel = pixels[row + 1][col];
-				if ((Math.abs(topPixel.getBlue() - bottomPixel.getBlue())) + (Math.abs(topPixel.getRed() - bottomPixel.getRed())) + (Math.abs(topPixel.getGreen() - bottomPixel.getGreen())) > colorDiff)
+				if ((Math.abs(topPixel.getColor(color) - bottomPixel.getColor(color))) > colorDiff)
 					topPixel.setColor(Color.BLACK);
 			}
 		}

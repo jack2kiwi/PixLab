@@ -162,6 +162,30 @@ public class Pixel {
 
 		return green;
 	}
+	
+	public int getColor(String color) {
+		if (color == "green") {
+			int value = picture.getBasicPixel(x, y);
+
+			int green = (value >> 8) & 0xff;
+
+			return green;
+		}
+		else if (color == "blue") {
+			int value = picture.getBasicPixel(x, y);
+
+			int blue = value & 0xff;
+
+			return blue;
+		}
+		else {
+			int value = picture.getBasicPixel(x, y);
+
+			int red = (value >> 16) & 0xff;
+
+			return red;
+		}
+	}
 
 	/**
 	 * Method to get the green value from a pixel represented as an int
